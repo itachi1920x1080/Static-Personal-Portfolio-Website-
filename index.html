@@ -5,135 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mao Visal | Portfolio</title>
     <link rel="icon" type="image/png" href="/static/img/image.png">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Pixel + Body fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-
+    <!-- Single stylesheet (replaces old style.css) -->
     <link rel="stylesheet" href="/static/style.css">
-    <script src="static/style-js.js"></script>
 </head>
 <body>
 
-    <nav>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
+    <!-- World canvas (fixed background) -->
+    <div class="voxel-universe">
+        <canvas id="planet-canvas"></canvas>
+    </div>
 
-        <ul id="nav-links">
-            <li>
-                <a href="#home">
-                    <i class="fa-solid fa-house"></i> Home
-                </a>
-            </li>
-            <li>
-                <a href="#profile">
-                    <i class="fa-regular fa-user"></i> Profile
-                </a>
-            </li>
-            <li>
-                <a href="#projects">
-                    <i class="fa-regular fa-folder"></i> Projects
-                </a>
-            </li>
-            <li>
-                <a href="#Skills">
-                    <i class="fa-regular fa-star"></i> Skills
-                </a>
-            </li>
-            <li>
-                <a href="#experience">
-                    <i class="fa-solid fa-briefcase"></i> Experience
-                </a>
-            </li>
-            <li>
-                <a href="#connect">
-                    <i class="fa-regular fa-envelope"></i> Connect
-                </a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter:invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav text-center gap-4">
+                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profile"><i class="fa-regular fa-user"></i> Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fa-regular fa-folder"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Skills"><i class="fa-regular fa-star"></i> Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#connect"><i class="fa-regular fa-envelope"></i> Connect</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="theme-toggle" title="Toggle Theme">
+                            <i class="fa-solid fa-circle-half-stroke" id="theme-icon"></i> Theme
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
+    <!-- ═══════════════════════════════════════
+         OVERWORLD — Home + Profile
+    ═══════════════════════════════════════ -->
+    <div id="dimension-overworld" class="dimension">
 
     <header id="home">
         <div class="cloud c1"></div>
         <div class="cloud c2"></div>
         <div class="cloud c3"></div>
-        
+
         <div class="hero-text container text-center">
+            <div class="avatar mb-4" style="width:150px;height:150px;margin:0 auto;border:4px solid var(--accent-primary);border-radius:0;overflow:hidden;background:#000;box-shadow:0 0 20px var(--accent-primary);">
+                <img src="/static/img/image.png" alt="Mao Visal Logo" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated;">
+            </div>
             <h1>HELLO WORLD</h1>
             <p>Welcome to my server.</p>
+            <div class="social-links">
+                <a href="https://twitter.com/itachi" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="https://www.instagram.com/itachi1920x1080?utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@itachi1920x1080?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                <a href="https://t.me/Lovealonesusususususususususu" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
+            </div>
         </div>
     </header>
 
     <section id="profile">
-        <div class="scene">
-            <div class="cube">
-                <div class="cube-face front"></div>
-                <div class="cube-face back"></div>
-                <div class="cube-face right"></div>
-                <div class="cube-face left"></div>
-                <div class="cube-face top"></div>
-                <div class="cube-face bottom"></div>
-            </div>
-        </div>
         <div class="profile-content pixel-border">
             <div class="avatar">
-                <img src="/static/img/image.png" alt="My Logo">
+                <img src="/static/img/image.png" alt="Mao Visal Logo">
             </div>
             <h2>MAO VISAL</h2>
-            <h3>STUDENT COMPUTER SCIENCE</h3>
+            <h3>COMPUTER SCIENCE STUDENT</h3>
             <p>
-                Hi! I'm <strong>Mao Visal</strong>, a passionate front-end developer
-                specializing in translating design concepts into seamless and
-                interactive web experiences.
+                Hi! I'm <strong>Mao Visal</strong>, a Computer Science student at RUPP specializing in full-stack development and networking. I enjoy building secure, efficient systems using tools like Laravel, Tailwind CSS, and Python.
             </p>
             <a href="#projects" class="btn">View Inventory</a>
         </div>
     </section>
 
+    </div><!-- /overworld -->
+
+
+    <!-- ═══════════════════════════════════════
+         NETHER — Projects
+    ═══════════════════════════════════════ -->
+    <div id="dimension-nether" class="dimension">
+
     <section id="projects">
         <div class="container">
-            <h2 class="section-title" style="color: #8d6743;">PROJECTS</h2>
+            <h2 class="section-title">PROJECTS</h2>
             <div class="row g-4 justify-content-center">
-                
+
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card redstone-machine" data-bs-toggle="modal" data-bs-target="#pythonModal" style="cursor:pointer;">
                         <div class="card-img-placeholder">
                             <img src="/static/img/image copy 2.png" alt="Python Project">
                         </div>
                         <h3>Python Project</h3>
                         <p>A decentralized ledger built from scratch using Python.</p>
-                        <a href="#" class="btn w-100 mt-auto">Source Code</a>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card redstone-machine" data-bs-toggle="modal" data-bs-target="#webdevModal" style="cursor:pointer;">
                         <div class="card-img-placeholder">
-                            <img src="/static/img/image copy 3.png " alt="Web Dev">
+                            <div class="iframe-thumbnail-container">
+                                <iframe src="https://beautiful-reflection-production.up.railway.app/" scrolling="no" tabindex="-1"></iframe>
+                            </div>
                         </div>
                         <h3>Web Development</h3>
                         <p>A personal portfolio website showcasing my projects and skills.</p>
-                        <a href="#" class="btn w-100 mt-auto">Source Code</a>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card redstone-machine" data-bs-toggle="modal" data-bs-target="#gameModal" style="cursor:pointer;">
                         <div class="card-img-placeholder">
                             <img src="/static/img/image copy 4.png" alt="Game Dev">
                         </div>
                         <h3>Game Development</h3>
                         <p>A Basic game using Python.</p>
-                        <a href="#" class="btn w-100 mt-auto">Source Code</a>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card nether-fortress" data-bs-toggle="modal" data-bs-target="#botModal" style="cursor:pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/image copy.png" alt="Telegram Bot">
+                        </div>
+                        <h3>Telegram Bot</h3>
+                        <p>Telegram bot.</p>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card nether-fortress" data-bs-toggle="modal" data-bs-target="#mediaHubModal" style="cursor:pointer;">
+                        <div class="card-img-placeholder" style="background-color:transparent;">
+                            <div class="iframe-thumbnail-container">
+                                <iframe src="https://media-downloader-hub-bot.vercel.app" scrolling="no" tabindex="-1"></iframe>
+                            </div>
+                        </div>
+                        <h3>Media Downloader Hub</h3>
+                        <p>A web interface for downloading media via my Telegram bot.</p>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card nether-fortress" data-bs-toggle="modal" data-bs-target="#faceRecModal" style="cursor:pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/FaceRecognition.png" alt="Face Recognition Project">
+                        </div>
+                        <h3>Face Recognition System</h3>
+                        <p>ប្រព័ន្ធគ្រប់គ្រងសិស្ស ជាមួយនឹងការស្កេនមុខ (Student Management System)</p>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card redstone-machine" data-bs-toggle="modal" data-bs-target="#calculatorModal" style="cursor:pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/image copy 5.png" alt="Calculator GUI">
+                        </div>
+                        <h3>Calculator GUI</h3>
+                        <p>A graphical user interface calculator.</p>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card redstone-machine" data-bs-toggle="modal" data-bs-target="#tipsDatasetModal" style="cursor:pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/Tips dataset analysis.png" alt="Tips Dataset Analysis">
+                        </div>
+                        <h3>Tips Dataset Analysis</h3>
+                        <p>Data analysis and visualization of the tips dataset.</p>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card redstone-machine" data-bs-toggle="modal" data-bs-target="#aiEducationModal" style="cursor:pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/pairplot.png" alt="Analyzing AI in Education">
+                        </div>
+                        <h3>Analyzing AI in Education</h3>
+                        <p>Data analysis and visualization of AI perception in education.</p>
+                        <div class="mt-auto text-center" style="color:var(--mc-green-light);font-weight:bold;font-size:1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
                     </div>
                 </div>
 
@@ -141,49 +206,72 @@
         </div>
     </section>
 
+    </div><!-- /nether -->
+
+
+    <!-- ═══════════════════════════════════════
+         THE END — Skills + Experience + Connect
+    ═══════════════════════════════════════ -->
+    <div id="dimension-end" class="dimension">
+
     <section id="Skills">
-        <div class="container">
-            <h2 class="section-title" style="color: #696965;">SKILLS</h2>
-            <div class="d-flex flex-wrap justify-content-center">
-                <a href="#" class="btn-skill">C</a>
-                <a href="#" class="btn-skill">C++</a>
-                <a href="#" class="btn-skill">Java</a>
-                <a href="#" class="btn-skill">C#</a>
-                <a href="#" class="btn-skill">Python</a>
-                <a href="#" class="btn-skill">HTML</a>
-                <a href="#" class="btn-skill">CSS</a>
-            </div>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <div id="skills-tabs" class="skills-tabs"></div>
+            <div id="skills-content" class="skills-content"></div>
         </div>
     </section>
 
-    <!-- <section id="experience">
-        <div class="container text-center">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-tex d-flex justify-content-center">
-                <p class="col-md-6">
-                    No professional experience yet, but actively building projects, learning new skills,
-                    and eager for opportunities to work and grow.
-                </p>
-
-            </div>
-        </div>
-    </section> -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title text-center mb-5" style="color: #fce803;">My Journey</h2>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    
+            <h2 class="section-title text-center mb-3" style="color:#fce803;">My Journey</h2>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <p style="color:#fff;font-size:1rem;text-shadow:none;">
+                        No professional experience yet, but actively building projects, learning new skills,
+                        and eager for opportunities to work and grow.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="col-lg-12 col-md-10">
                     <div class="timeline-wrapper">
-                        
+
                         <div class="timeline-item">
                             <span class="timeline-badge">Present</span>
+                            <h4 class="h5 fw-bold mt-2">Media Downloader Hub Bot</h4>
+                            <p class="text-style">
+                                Launched a dedicated web application for my Telegram media downloader bot.<br>
+                                <a href="https://media-downloader-hub-bot.vercel.app" target="_blank" class="pixel-link-btn">View Bot App</a>
+                                <a href="https://beautiful-reflection-production.up.railway.app/" target="_blank" class="pixel-link-btn">View Ecommerce App</a>
+                                <a href="https://t.me/rupp_shop_bot" target="_blank" class="pixel-link-btn">View Rupp Shop Bot</a>
+                            </p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-badge">2026</span>
+                            <h4 class="h5 fw-bold mt-2">PHP, Laravel &amp; React.js</h4>
+                            <p class="text-style">
+                                Study PHP, Laravel, and React.js to build scalable, modern full-stack web applications.
+                            </p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-badge">2025</span>
+                            <h4 class="h5 fw-bold mt-2">School Attendance System</h4>
+                            <p class="text-style">
+                                <a href="https://school-attendance-system-kappa.vercel.app/" target="_blank" class="pixel-link-btn">Attendance</a>
+                            </p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-badge">2024</span>
                             <h4 class="h5 fw-bold mt-2">Started Web Development</h4>
-                            <p>
+                            <p class="text-style">
                                 Began learning the fundamentals of HTML, CSS, and Bootstrap to build responsive user interfaces.
                             </p>
                         </div>
+
                         <div class="timeline-item">
                             <span class="timeline-badge">2024</span>
                             <h4 class="h5 fw-bold mt-2">Deepening Python Knowledge</h4>
@@ -191,10 +279,11 @@
                                 Mastered automation scripts and GUI development using libraries like Selenium and Tkinter.
                             </p>
                         </div>
+
                         <div class="timeline-item">
                             <span class="timeline-badge">2023</span>
                             <h4 class="h5 fw-bold mt-2">Building Full-Stack Projects</h4>
-                            <p>
+                            <p class="text-style">
                                 Developing a comprehensive management system using Python (Flask) and SQL. Focusing on backend logic and database architecture.
                             </p>
                         </div>
@@ -203,41 +292,232 @@
                 </div>
             </div>
         </div>
-        </section>
+    </section>
 
-    <section id="connect" class="py-5" >
+    <section id="connect" class="py-5">
+        <div class="end-portal-frame mx-auto mb-5">
+            <div class="end-portal-void">
+                <h2 class="section-title" style="color:#e3dfa8;margin-bottom:0;">MULTIPLAYER</h2>
+            </div>
+        </div>
         <div class="container text-center">
-            <h2 class="section-title" style="color: #5f4f7e;">MULTIPLAYER</h2>
-
             <div class="row justify-content-center mb-5">
-                <div class="col-md-100 col-lg-6">
+                <div class="col-md-10 col-lg-6">
                     <div class="input-group">
                         <input type="text" class="form-control pixel-input" placeholder="Type a message..." aria-label="Message">
                         <button class="btn pixel-btn-submit" type="button">Send</button>
                     </div>
                 </div>
             </div>
-                        
             <div class="social-links">
-                <a href="https://github.com/itachi1920x1080" class="pixel-btn-social gh" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
-                <a href="#" class="pixel-btn-social li" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-                <a href="mailto:itachi@gmail.com" class="pixel-btn-social em">
-                    <i class="fas fa-envelope"></i>
-                    Email
-                </a>
+                <a href="https://github.com/itachi1920x1080" class="pixel-btn-social gh" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/mao-visal-22586536a/" class="pixel-btn-social li" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:itachi@gmail.com" class="pixel-btn-social em"><i class="fas fa-envelope"></i> Email</a>
             </div>
-
-            <footer>
-                <p>&copy; 2025 Mao Visal. Crafted with HTML & CSS.</p>
-            </footer>
+            <footer><p>&copy; 2025 Mao Visal. Crafted with HTML &amp; CSS.</p></footer>
         </div>
     </section>
+
+    </div><!-- /end -->
+
+
+    <!-- ═══════════════════════════════════════  MODALS  ═══════════════════════════════════════ -->
+
+    <div class="modal fade" id="pythonModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Python Project</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <img src="/static/img/image copy 2.png" alt="Python Project" class="img-fluid mb-3 border border-info" style="max-height:60vh;">
+            <p>A decentralized ledger built from scratch using Python.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top:2px solid #5dade2;">
+            <a href="https://github.com/itachi1920x1080" target="_blank" class="btn m-1">Source Code</a>
+            <a href="https://github.com/itachi1920x1080/learning-Python.git" target="_blank" class="btn m-1">Learning Python</a>
+            <a href="https://github.com/itachi1920x1080/Diagram_py.git" target="_blank" class="btn m-1">Diagram Py</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="webdevModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Web Development</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="ratio ratio-16x9 mb-3 border border-info">
+                <iframe src="https://beautiful-reflection-production.up.railway.app/" title="Ecommerce Project" allowfullscreen></iframe>
+            </div>
+            <p class="text-center">A personal portfolio website showcasing my projects and skills.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top:2px solid #5dade2;">
+            <a href="https://beautiful-reflection-production.up.railway.app/" target="_blank" class="btn m-1">Frontend Demo</a>
+            <a href="https://ecommerce-production-3bc1.up.railway.app/" target="_blank" class="btn m-1">Backend Demo</a>
+            <a href="https://github.com/itachi1920x1080" target="_blank" class="btn m-1">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="gameModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Game Development</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <img src="/static/img/image copy 4.png" alt="Game Dev" class="img-fluid mb-3 border border-info" style="max-height:60vh;">
+            <p>A Basic game using Python.</p>
+            </div>
+            <div class="modal-footer justify-content-center" style="border-top:2px solid #5dade2;">
+            <a href="https://github.com/itachi1920x1080" target="_blank" class="btn">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="botModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Telegram Bot</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <img src="/static/img/image copy.png" alt="Telegram Bot" class="img-fluid mb-3 border border-info" style="max-height:60vh;">
+            <p>Telegram bot projects.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top:2px solid #5dade2;">
+            <a href="https://t.me/my_media_hub_bot" target="_blank" class="btn m-1">MediaDownloaderHub_Bot</a>
+            <a href="https://t.me/rupp_shop_bot" target="_blank" class="btn m-1">RuppShop_Bot</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mediaHubModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Media Downloader Hub</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="ratio ratio-16x9 mb-3 border border-info">
+                <iframe src="https://media-downloader-hub-bot.vercel.app" title="Media Downloader Hub" allowfullscreen></iframe>
+            </div>
+            <p class="text-center">A dedicated web interface for downloading media via my Telegram bot.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top:2px solid #5dade2;">
+            <a href="https://media-downloader-hub-bot.vercel.app" target="_blank" class="btn m-1">Live Web App</a>
+            <a href="https://t.me/my_media_hub_bot" target="_blank" class="btn m-1">Telegram Bot</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="faceRecModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Face Recognition System</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <img src="/static/img/FaceRecognition.png" alt="Face Recognition Project" class="img-fluid mb-3 border border-info" style="max-height:60vh;">
+            <p>ប្រព័ន្ធគ្រប់គ្រងសិស្ស ជាមួយនឹងការស្កេនមុខ (STUDENT MANAGEMENT SYSTEM WITH FACE RECOGNITION)</p>
+            </div>
+            <div class="modal-footer justify-content-center" style="border-top:2px solid #5dade2;">
+            <a href="https://github.com/itachi1920x1080/Face_Recognition_School_Management.git" target="_blank" class="btn">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="calculatorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Calculator GUI</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <img src="/static/img/image copy 5.png" alt="Calculator GUI" class="img-fluid mb-3 border border-info" style="max-height:60vh;">
+            <p>A graphical user interface calculator project.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top:2px solid #5dade2;">
+            <a href="https://github.com/itachi1920x1080/Calculator-GUI.git" target="_blank" class="btn m-1">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tipsDatasetModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Tips Dataset Analysis</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <img src="/static/img/Tips dataset analysis1.png" alt="Tips Dataset Analysis" class="img-fluid mb-3 border border-info" style="max-height:60vh;">
+            <p>Data analysis and visualization of the tips dataset using Python.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top:2px solid #5dade2;">
+            <a href="https://github.com/itachi1920x1080/tips-dataset-analysis.git" target="_blank" class="btn m-1">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="aiEducationModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content text-light">
+            <div class="modal-header" style="border-bottom:2px solid #5dade2;">
+            <h5 class="modal-title">Analyzing AI in Education</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+            <div id="aiEducationCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner border border-info mb-3">
+                <div class="carousel-item active">
+                    <img src="/static/img/pairplot.png" class="d-block w-100" alt="Pairplot Analysis" style="max-height:60vh;object-fit:contain;">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/img/q3_year.png" class="d-block w-100" alt="Q3 Year Analysis" style="max-height:60vh;object-fit:contain;">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#aiEducationCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#fff;border-radius:50%;"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#aiEducationCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#fff;border-radius:50%;"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <p>Data analysis and visualization of AI perception in education using Python.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top:2px solid #5dade2;">
+            <a href="https://github.com/itachi1920x1080/analyzing-ai-in-education.git" target="_blank" class="btn m-1">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Existing skills/theme/timeline logic -->
+    <script src="/static/style-js.js"></script>
+    <!-- Minecraft world engine (replaces Three.js planet) -->
+    <script src="/static/minecraft-world.js"></script>
 
 </body>
 </html>
